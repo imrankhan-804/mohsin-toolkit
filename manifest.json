@@ -1,0 +1,17 @@
+{
+  "name": "Mohsin Toolkit",
+  "short_name": "Mohsin Toolkit",
+  "description": "My personal apps and tools hub",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#070b14",
+  "theme_color": "#0284c7",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "https://cdn-icons-png.flaticon.com/512/1000/1000997.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
