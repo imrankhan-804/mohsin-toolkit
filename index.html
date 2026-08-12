@@ -3,47 +3,186 @@ index.html
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
 <title>Mohsin Toolkit</title>
 
 <style>
 *{box-sizing:border-box;margin:0;padding:0;font-family:Arial,sans-serif}
-body{background:#080d18;color:#fff;min-height:100vh}
-header{text-align:center;padding:30px 15px;background:linear-gradient(135deg,#111827,#172554)}
-.logo{font-size:30px;font-weight:bold;color:#38bdf8}
-.subtitle{color:#94a3b8;margin-top:8px}
-.search{max-width:650px;margin:25px auto 5px}
-.search input{width:100%;padding:15px 20px;border-radius:30px;border:1px solid #334155;background:#111827;color:#fff;outline:none;font-size:16px}
-.categories{display:flex;gap:9px;overflow-x:auto;padding:20px;max-width:1150px;margin:auto}
-.categories button{border:1px solid #334155;background:#151d2d;color:#fff;padding:10px 16px;border-radius:22px;white-space:nowrap}
-.categories button:hover{background:#0284c7}
-.container{max-width:1150px;margin:auto;padding:5px 20px 50px}
-.section{margin-top:25px}
-.section h2{margin-bottom:15px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
-.card{background:#111827;border:1px solid #263247;border-radius:18px;padding:18px;transition:.2s}
-.card:hover{transform:translateY(-4px);border-color:#38bdf8}
-.icon{font-size:32px;margin-bottom:12px}
-.card h3{margin-bottom:8px}
-.card p{color:#94a3b8;font-size:14px;line-height:1.5;min-height:42px}
-.card a{display:block;text-align:center;margin-top:14px;padding:11px;background:#0284c7;color:#fff;text-decoration:none;border-radius:10px;font-weight:bold}
-.card a:hover{background:#0369a1}
-footer{text-align:center;padding:25px;color:#64748b;border-top:1px solid #1e293b}
+
+body{
+background:#070b14;
+color:#fff;
+min-height:100vh;
+}
+
+header{
+padding:35px 18px;
+text-align:center;
+background:linear-gradient(135deg,#0f172a,#172554);
+border-bottom:1px solid #263247;
+}
+
+.logo{
+font-size:32px;
+font-weight:bold;
+color:#38bdf8;
+}
+
+.subtitle{
+color:#94a3b8;
+margin-top:8px;
+}
+
+.search{
+max-width:650px;
+margin:25px auto 0;
+}
+
+.search input{
+width:100%;
+padding:15px 20px;
+border-radius:30px;
+border:1px solid #334155;
+background:#111827;
+color:#fff;
+outline:none;
+font-size:16px;
+}
+
+.categories{
+display:flex;
+gap:10px;
+overflow-x:auto;
+padding:18px;
+max-width:1200px;
+margin:auto;
+}
+
+.categories button{
+border:1px solid #334155;
+background:#111827;
+color:white;
+padding:10px 17px;
+border-radius:25px;
+white-space:nowrap;
+cursor:pointer;
+}
+
+.categories button:hover{
+background:#0284c7;
+}
+
+.container{
+max-width:1200px;
+margin:auto;
+padding:10px 20px 60px;
+}
+
+.section{
+margin-top:30px;
+}
+
+.section h2{
+margin-bottom:16px;
+font-size:22px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:17px;
+}
+
+.card{
+background:#101827;
+border:1px solid #263247;
+border-radius:18px;
+padding:20px;
+transition:.2s;
+}
+
+.card:hover{
+transform:translateY(-5px);
+border-color:#38bdf8;
+}
+
+.icon{
+font-size:35px;
+margin-bottom:12px;
+}
+
+.card h3{
+margin-bottom:8px;
+}
+
+.card p{
+color:#94a3b8;
+font-size:14px;
+line-height:1.5;
+min-height:42px;
+}
+
+.card a{
+display:block;
+margin-top:16px;
+padding:11px;
+background:#0284c7;
+color:#fff;
+text-align:center;
+text-decoration:none;
+border-radius:10px;
+font-weight:bold;
+}
+
+.card a:hover{
+background:#0369a1;
+}
+
+footer{
+text-align:center;
+padding:25px;
+color:#64748b;
+border-top:1px solid #1e293b;
+}
+
+.noresult{
+display:none;
+text-align:center;
+color:#94a3b8;
+padding:40px;
+}
+
+@media(max-width:500px){
+.logo{font-size:27px}
+.grid{grid-template-columns:1fr}
+}
 </style>
 </head>
 
 <body>
 
 <header>
+
 <div class="logo">🛠️ Mohsin Toolkit</div>
-<div class="subtitle">My Personal Apps & Tools Hub</div>
+
+<div class="subtitle">
+Your Personal Apps & Tools Hub
+</div>
 
 <div class="search">
-<input id="search" type="text" placeholder="🔍 Search apps & tools..." onkeyup="searchTools()">
+<input
+id="search"
+type="text"
+placeholder="🔍 Search anything..."
+onkeyup="searchTools()">
 </div>
+
 </header>
 
+
 <div class="categories">
+
 <button onclick="filterTools('all')">🏠 All</button>
 <button onclick="filterTools('apps')">📱 Apps</button>
 <button onclick="filterTools('ai')">🤖 AI</button>
@@ -51,246 +190,315 @@ footer{text-align:center;padding:25px;color:#64748b;border-top:1px solid #1e293b
 <button onclick="filterTools('web')">🛠️ Web Tools</button>
 <button onclick="filterTools('downloads')">📥 Downloads</button>
 <button onclick="filterTools('links')">🔗 Links</button>
+
 </div>
+
 
 <main class="container">
 
+
+<!-- APPS -->
+
 <div class="section">
-<h2>📱 Android Apps</h2>
+<h2>📱 Useful Apps</h2>
+
 <div class="grid">
 
 <div class="card" data-category="apps">
-<div class="icon">📁</div>
-<h3>File Manager</h3>
-<p>Manage files and folders.</p>
-<a href="#" target="_blank">Open</a>
+<div class="icon">▶️</div>
+<h3>YouTube</h3>
+<p>Watch videos and explore YouTube.</p>
+<a href="https://www.youtube.com/" target="_blank">Open YouTube</a>
 </div>
 
 <div class="card" data-category="apps">
-<div class="icon">📝</div>
-<h3>Notes</h3>
-<p>Quick notes and text storage.</p>
-<a href="#" target="_blank">Open</a>
+<div class="icon">☁️</div>
+<h3>Google Drive</h3>
+<p>Store, manage and share your files.</p>
+<a href="https://drive.google.com/" target="_blank">Open Drive</a>
 </div>
 
 <div class="card" data-category="apps">
-<div class="icon">📄</div>
-<h3>PDF Tools</h3>
-<p>Useful PDF utilities.</p>
-<a href="#" target="_blank">Open</a>
+<div class="icon">📧</div>
+<h3>Gmail</h3>
+<p>Open your Gmail inbox.</p>
+<a href="https://mail.google.com/" target="_blank">Open Gmail</a>
 </div>
 
 <div class="card" data-category="apps">
-<div class="icon">🖼️</div>
-<h3>Image Tools</h3>
-<p>Resize and compress images.</p>
-<a href="#" target="_blank">Open</a>
+<div class="icon">▶️</div>
+<h3>YouTube Studio</h3>
+<p>Manage your YouTube channel and videos.</p>
+<a href="https://studio.youtube.com/" target="_blank">Open Studio</a>
 </div>
 
 </div>
 </div>
 
+
+<!-- AI -->
 
 <div class="section">
 <h2>🤖 AI Tools</h2>
+
 <div class="grid">
 
 <div class="card" data-category="ai">
 <div class="icon">🤖</div>
-<h3>AI Chat</h3>
-<p>AI assistant and chat tools.</p>
-<a href="#" target="_blank">Open</a>
+<h3>ChatGPT</h3>
+<p>AI assistant for questions, writing and ideas.</p>
+<a href="https://chatgpt.com/" target="_blank">Open ChatGPT</a>
 </div>
 
 <div class="card" data-category="ai">
 <div class="icon">🎨</div>
-<h3>AI Image Generator</h3>
-<p>Create images using AI.</p>
-<a href="#" target="_blank">Open</a>
+<h3>Canva</h3>
+<p>Create designs, posts, presentations and graphics.</p>
+<a href="https://www.canva.com/" target="_blank">Open Canva</a>
 </div>
 
 <div class="card" data-category="ai">
-<div class="icon">🎙️</div>
-<h3>AI Voice</h3>
-<p>Text-to-speech and voice tools.</p>
-<a href="#" target="_blank">Open</a>
-</div>
-
-<div class="card" data-category="ai">
-<div class="icon">✍️</div>
-<h3>AI Writing</h3>
-<p>Writing and content assistance.</p>
-<a href="#" target="_blank">Open</a>
+<div class="icon">🖼️</div>
+<h3>Remove Background</h3>
+<p>Automatically remove image backgrounds.</p>
+<a href="https://www.remove.bg/" target="_blank">Open Tool</a>
 </div>
 
 </div>
 </div>
 
+
+<!-- GAMING -->
 
 <div class="section">
 <h2>🎮 Gaming Tools</h2>
+
 <div class="grid">
 
 <div class="card" data-category="gaming">
-<div class="icon">🎯</div>
-<h3>PUBG Sensitivity</h3>
-<p>Gaming sensitivity settings.</p>
-<a href="#" target="_blank">Open</a>
-</div>
-
-<div class="card" data-category="gaming">
-<div class="icon">⚡</div>
-<h3>FPS Tools</h3>
-<p>Gaming performance utilities.</p>
-<a href="#" target="_blank">Open</a>
+<div class="icon">🎮</div>
+<h3>PUBG Mobile</h3>
+<p>Official PUBG Mobile website.</p>
+<a href="https://www.pubgmobile.com/" target="_blank">Open PUBG</a>
 </div>
 
 <div class="card" data-category="gaming">
 <div class="icon">📶</div>
-<h3>Ping Test</h3>
-<p>Check your network performance.</p>
-<a href="#" target="_blank">Open</a>
+<h3>Speed Test</h3>
+<p>Test your internet speed and connection.</p>
+<a href="https://www.speedtest.net/" target="_blank">Start Test</a>
+</div>
+
+<div class="card" data-category="gaming">
+<div class="icon">⚡</div>
+<h3>Fast.com</h3>
+<p>Quick internet speed test.</p>
+<a href="https://fast.com/" target="_blank">Start Test</a>
 </div>
 
 <div class="card" data-category="gaming">
 <div class="icon">📱</div>
-<h3>Device Info</h3>
-<p>Check device information.</p>
-<a href="#" target="_blank">Open</a>
+<h3>Google Play</h3>
+<p>Find Android apps and games.</p>
+<a href="https://play.google.com/" target="_blank">Open Play Store</a>
 </div>
 
 </div>
 </div>
 
+
+<!-- WEB TOOLS -->
 
 <div class="section">
 <h2>🛠️ Useful Web Tools</h2>
+
 <div class="grid">
 
 <div class="card" data-category="web">
 <div class="icon">🔳</div>
-<h3>QR Generator</h3>
-<p>Create QR codes.</p>
-<a href="#" target="_blank">Open</a>
+<h3>QR Code Generator</h3>
+<p>Create QR codes for links, text and more.</p>
+<a href="https://www.qrcode-monkey.com/" target="_blank">Create QR</a>
 </div>
 
 <div class="card" data-category="web">
 <div class="icon">🔐</div>
 <h3>Password Generator</h3>
-<p>Generate strong passwords.</p>
-<a href="#" target="_blank">Open</a>
+<p>Generate strong random passwords.</p>
+<a href="https://www.calculator.net/password-generator.html" target="_blank">Generate</a>
 </div>
 
 <div class="card" data-category="web">
 <div class="icon">🔗</div>
-<h3>URL Tools</h3>
-<p>Useful URL utilities.</p>
-<a href="#" target="_blank">Open</a>
+<h3>URL Shortener</h3>
+<p>Shorten long website links.</p>
+<a href="https://tinyurl.com/" target="_blank">Shorten URL</a>
 </div>
 
 <div class="card" data-category="web">
-<div class="icon">🔢</div>
+<div class="icon">🧮</div>
 <h3>Calculator</h3>
-<p>Quick online calculations.</p>
-<a href="#" target="_blank">Open</a>
+<p>Online scientific and general calculators.</p>
+<a href="https://www.calculator.net/" target="_blank">Open Calculator</a>
 </div>
 
 <div class="card" data-category="web">
 <div class="icon">📏</div>
 <h3>Unit Converter</h3>
-<p>Convert common units.</p>
-<a href="#" target="_blank">Open</a>
+<p>Convert length, weight, speed, data and more.</p>
+<a href="https://www.convertunits.com/" target="_blank">Convert Units</a>
+</div>
+
+<div class="card" data-category="web">
+<div class="icon">🖼️</div>
+<h3>Image Background Remover</h3>
+<p>Remove image backgrounds automatically.</p>
+<a href="https://www.remove.bg/" target="_blank">Remove Background</a>
 </div>
 
 </div>
 </div>
 
+
+<!-- DOWNLOADS -->
 
 <div class="section">
 <h2>📥 Downloads</h2>
+
 <div class="grid">
 
 <div class="card" data-category="downloads">
 <div class="icon">📦</div>
 <h3>My APK</h3>
-<p>Your own Android application.</p>
-<a href="#" target="_blank">Download</a>
+<p>Your own APK download will be added here.</p>
+<a href="#" onclick="alert('Apna APK link yahan add karna hai.');return false;">Coming Soon</a>
 </div>
 
 <div class="card" data-category="downloads">
 <div class="icon">📁</div>
 <h3>My Files</h3>
-<p>Add your own downloadable files here.</p>
-<a href="#" target="_blank">Download</a>
+<p>Add your own files and documents here.</p>
+<a href="#" onclick="alert('Apni file ka link yahan add karna hai.');return false;">Coming Soon</a>
 </div>
 
 </div>
 </div>
 
+
+<!-- LINKS -->
 
 <div class="section">
 <h2>🔗 Important Links</h2>
+
 <div class="grid">
 
 <div class="card" data-category="links">
 <div class="icon">💻</div>
 <h3>GitHub</h3>
-<p>My GitHub repository.</p>
-<a href="https://github.com/" target="_blank">Open</a>
+<p>Manage your source code and repositories.</p>
+<a href="https://github.com/" target="_blank">Open GitHub</a>
 </div>
 
 <div class="card" data-category="links">
 <div class="icon">▲</div>
 <h3>Vercel</h3>
-<p>Website deployment platform.</p>
-<a href="https://vercel.com/" target="_blank">Open</a>
+<p>Deploy and manage your websites.</p>
+<a href="https://vercel.com/" target="_blank">Open Vercel</a>
 </div>
 
 <div class="card" data-category="links">
-<div class="icon">▶️</div>
-<h3>YouTube Studio</h3>
-<p>Manage your YouTube channel.</p>
-<a href="https://studio.youtube.com/" target="_blank">Open</a>
+<div class="icon">🎨</div>
+<h3>Canva</h3>
+<p>Design graphics, thumbnails and social posts.</p>
+<a href="https://www.canva.com/" target="_blank">Open Canva</a>
 </div>
 
 <div class="card" data-category="links">
 <div class="icon">☁️</div>
 <h3>Google Drive</h3>
-<p>Cloud storage and files.</p>
-<a href="https://drive.google.com/" target="_blank">Open</a>
+<p>Access your cloud files.</p>
+<a href="https://drive.google.com/" target="_blank">Open Drive</a>
 </div>
 
 </div>
+</div>
+
+
+<div id="noresult" class="noresult">
+😕 No tool found.
 </div>
 
 </main>
+
 
 <footer>
 © 2026 Mohsin Toolkit
 </footer>
 
+
 <script>
+
 function searchTools(){
-let input=document.getElementById("search").value.toLowerCase();
-let cards=document.querySelectorAll(".card");
+
+let input=document
+.getElementById("search")
+.value
+.toLowerCase()
+.trim();
+
+let cards=document
+.querySelectorAll(".card");
+
+let found=0;
 
 cards.forEach(card=>{
+
 let text=card.innerText.toLowerCase();
-card.style.display=text.includes(input)?"block":"none";
-});
+
+if(text.includes(input)){
+card.style.display="block";
+found++;
+}else{
+card.style.display="none";
 }
 
+});
+
+document.getElementById("noresult").style.display=
+found===0 ? "block" : "none";
+
+}
+
+
 function filterTools(category){
+
 let cards=document.querySelectorAll(".card");
 
+let found=0;
+
 cards.forEach(card=>{
-card.style.display=
-category==="all" || card.dataset.category===category
-?"block":"none";
+
+if(category==="all" ||
+card.dataset.category===category){
+
+card.style.display="block";
+found++;
+
+}else{
+
+card.style.display="none";
+
+}
+
 });
 
 document.getElementById("search").value="";
+
+document.getElementById("noresult").style.display=
+found===0 ? "block" : "none";
+
 }
+
 </script>
 
 </body>
